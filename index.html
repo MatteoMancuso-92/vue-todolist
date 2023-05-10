@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todolist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,6 @@
 		</div>
 
 		<div class="new-task">
-			<!-- <input @keyup.enter="addTodo" type="text" placeholder="Nuova task" v-model="newTodoNested.content.text"> -->
-			<!-- <input @keyup.enter="addTodo" type="text" placeholder="Nuova task" v-model="newTodo.text"> -->
 			<input @keyup.enter="addTodo" type="text" placeholder="Nuova task" v-model="newTodoText">
 			<button @click="addTodo">Aggiungi</button>
 			<div v-show="inputError" class="error">
@@ -30,7 +28,6 @@
 					:key="todo.text"
 					class="task"
 					@click="toggleDone(todo)"
-				>
 					<span :class="{done: todo.done}">{{ todo.text }}</span>
 					<i class="fas fa-times" @click="deleteItem(i)"></i>
 				</li>
